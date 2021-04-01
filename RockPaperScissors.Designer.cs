@@ -34,6 +34,7 @@ namespace RockPaperScissors
             this.Scissors = new System.Windows.Forms.Button();
             this.opponentResult = new System.Windows.Forms.TextBox();
             this.userResult = new System.Windows.Forms.TextBox();
+            this.playResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Rock
@@ -73,7 +74,7 @@ namespace RockPaperScissors
             // 
             this.opponentResult.Location = new System.Drawing.Point(629, 229);
             this.opponentResult.Name = "opponentResult";
-            this.opponentResult.Size = new System.Drawing.Size(100, 23);
+            this.opponentResult.Size = new System.Drawing.Size(116, 23);
             this.opponentResult.TabIndex = 3;
             this.opponentResult.TextChanged += new System.EventHandler(this.opponentResult_TextChanged);
             // 
@@ -85,11 +86,22 @@ namespace RockPaperScissors
             this.userResult.TabIndex = 4;
             this.userResult.TextChanged += new System.EventHandler(this.userPlay_TextChanged);
             // 
+            // playResult
+            // 
+            this.playResult.AutoSize = true;
+            this.playResult.Location = new System.Drawing.Point(388, 28);
+            this.playResult.Name = "playResult";
+            this.playResult.Size = new System.Drawing.Size(170, 15);
+            this.playResult.TabIndex = 5;
+            this.playResult.Text = "Choose Rock, Paper or Scissors";
+            this.playResult.Click += new System.EventHandler(this.playResult_Click);
+            // 
             // RockPaperScissors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
+            this.Controls.Add(this.playResult);
             this.Controls.Add(this.userResult);
             this.Controls.Add(this.opponentResult);
             this.Controls.Add(this.Scissors);
@@ -110,6 +122,7 @@ namespace RockPaperScissors
         private System.Windows.Forms.TextBox opponentResult;
         private System.Windows.Forms.TextBox userPlay;
         private System.Windows.Forms.TextBox userResult;
+        private System.Windows.Forms.Label playResult;
     }
 }
 

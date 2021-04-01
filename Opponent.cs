@@ -6,7 +6,7 @@ namespace RockPaperScissors
 {
     public class Opponent
     {
-        public string OpponentPlay(string opponentValue)
+        public string OpponentPlay()
         {
             string[] play = { "rock", "paper", "scissors" };
 
