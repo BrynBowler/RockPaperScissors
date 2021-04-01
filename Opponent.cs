@@ -4,9 +4,9 @@ using System.Text;
 
 namespace RockPaperScissors
 {
-    class Opponent
+    public class Opponent
     {
-        public static void opponentPlay() 
+        public string OpponentPlay(string opponentValue)
         {
             string[] play = { "rock", "paper", "scissors" };
 
@@ -14,9 +14,8 @@ namespace RockPaperScissors
 
             int index = rand.Next(play.Length);
 
-            Console.WriteLine($"{play[index]}");
-
-            Console.ReadLine();
+            string result = $"{play[index]}";
+            return result;
         }
     }
 }

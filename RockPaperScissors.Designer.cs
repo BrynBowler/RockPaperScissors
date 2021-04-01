@@ -32,6 +32,8 @@ namespace RockPaperScissors
             this.Rock = new System.Windows.Forms.Button();
             this.Paper = new System.Windows.Forms.Button();
             this.Scissors = new System.Windows.Forms.Button();
+            this.opponentResult = new System.Windows.Forms.TextBox();
+            this.userResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Rock
@@ -65,18 +67,38 @@ namespace RockPaperScissors
             this.Scissors.TabIndex = 2;
             this.Scissors.Text = "Scissors";
             this.Scissors.UseVisualStyleBackColor = true;
+            this.Scissors.Click += new System.EventHandler(this.Scissors_Click);
+            // 
+            // opponentResult
+            // 
+            this.opponentResult.Location = new System.Drawing.Point(629, 229);
+            this.opponentResult.Name = "opponentResult";
+            this.opponentResult.Size = new System.Drawing.Size(100, 23);
+            this.opponentResult.TabIndex = 3;
+            this.opponentResult.TextChanged += new System.EventHandler(this.opponentResult_TextChanged);
+            // 
+            // userResult
+            // 
+            this.userResult.Location = new System.Drawing.Point(212, 229);
+            this.userResult.Name = "userResult";
+            this.userResult.Size = new System.Drawing.Size(122, 23);
+            this.userResult.TabIndex = 4;
+            this.userResult.TextChanged += new System.EventHandler(this.userPlay_TextChanged);
             // 
             // RockPaperScissors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
+            this.Controls.Add(this.userResult);
+            this.Controls.Add(this.opponentResult);
             this.Controls.Add(this.Scissors);
             this.Controls.Add(this.Paper);
             this.Controls.Add(this.Rock);
             this.Name = "RockPaperScissors";
             this.Text = "RockPaperScissors";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,6 +107,9 @@ namespace RockPaperScissors
         private System.Windows.Forms.Button Rock;
         private System.Windows.Forms.Button Paper;
         private System.Windows.Forms.Button Scissors;
+        private System.Windows.Forms.TextBox opponentResult;
+        private System.Windows.Forms.TextBox userPlay;
+        private System.Windows.Forms.TextBox userResult;
     }
 }
 

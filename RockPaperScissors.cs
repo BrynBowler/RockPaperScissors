@@ -20,16 +20,30 @@ namespace RockPaperScissors
         public void Rock_Click(object sender, EventArgs e)
         {
             string userPlay = "rock";
+            opponentResult.AppendText();
+            userResult.Text = (userPlay);
         }
 
         public void Paper_Click(object sender, EventArgs e)
         {
             string userPlay = "paper";
+            userResult.Text = (userPlay);
         }
 
-        public void Scissor_Click(object sender, EventArgs e)
+        public void Scissors_Click(object sender, EventArgs e)
         {
             string userPlay = "scissors";
+            userResult.Text = (userPlay);
+        }
+
+        public void opponentResult_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void userPlay_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
