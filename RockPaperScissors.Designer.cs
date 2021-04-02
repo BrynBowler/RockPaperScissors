@@ -35,6 +35,16 @@ namespace RockPaperScissors
             this.opponentResult = new System.Windows.Forms.TextBox();
             this.userResult = new System.Windows.Forms.TextBox();
             this.playResult = new System.Windows.Forms.Label();
+            this.Result = new System.Windows.Forms.TextBox();
+            this.confirm = new System.Windows.Forms.Button();
+            this.opponentTalley = new System.Windows.Forms.Label();
+            this.userTalley = new System.Windows.Forms.Label();
+            this.userImage = new System.Windows.Forms.PictureBox();
+            this.opponentImage = new System.Windows.Forms.PictureBox();
+            this.versusImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opponentImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.versusImage)).BeginInit();
             this.SuspendLayout();
             // 
             // Rock
@@ -72,35 +82,125 @@ namespace RockPaperScissors
             // 
             // opponentResult
             // 
-            this.opponentResult.Location = new System.Drawing.Point(629, 229);
+            this.opponentResult.BackColor = System.Drawing.SystemColors.GrayText;
+            this.opponentResult.Enabled = false;
+            this.opponentResult.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.opponentResult.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.opponentResult.Location = new System.Drawing.Point(598, 313);
             this.opponentResult.Name = "opponentResult";
-            this.opponentResult.Size = new System.Drawing.Size(116, 23);
+            this.opponentResult.Size = new System.Drawing.Size(164, 33);
             this.opponentResult.TabIndex = 3;
+            this.opponentResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.opponentResult.TextChanged += new System.EventHandler(this.opponentResult_TextChanged);
             // 
             // userResult
             // 
-            this.userResult.Location = new System.Drawing.Point(212, 229);
+            this.userResult.BackColor = System.Drawing.SystemColors.GrayText;
+            this.userResult.Enabled = false;
+            this.userResult.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userResult.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.userResult.Location = new System.Drawing.Point(216, 313);
             this.userResult.Name = "userResult";
-            this.userResult.Size = new System.Drawing.Size(122, 23);
+            this.userResult.Size = new System.Drawing.Size(164, 33);
             this.userResult.TabIndex = 4;
+            this.userResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.userResult.TextChanged += new System.EventHandler(this.userPlay_TextChanged);
             // 
             // playResult
             // 
             this.playResult.AutoSize = true;
-            this.playResult.Location = new System.Drawing.Point(388, 28);
+            this.playResult.Location = new System.Drawing.Point(26, 9);
             this.playResult.Name = "playResult";
             this.playResult.Size = new System.Drawing.Size(170, 15);
             this.playResult.TabIndex = 5;
             this.playResult.Text = "Choose Rock, Paper or Scissors";
             this.playResult.Click += new System.EventHandler(this.playResult_Click);
             // 
+            // Result
+            // 
+            this.Result.BackColor = System.Drawing.SystemColors.GrayText;
+            this.Result.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Result.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.Result.Location = new System.Drawing.Point(410, 31);
+            this.Result.Name = "Result";
+            this.Result.Size = new System.Drawing.Size(154, 33);
+            this.Result.TabIndex = 6;
+            this.Result.Text = "In Play";
+            this.Result.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Result.TextChanged += new System.EventHandler(this.Result_TextChanged);
+            // 
+            // confirm
+            // 
+            this.confirm.Location = new System.Drawing.Point(410, 394);
+            this.confirm.Name = "confirm";
+            this.confirm.Size = new System.Drawing.Size(154, 54);
+            this.confirm.TabIndex = 7;
+            this.confirm.Text = "Next Round";
+            this.confirm.UseVisualStyleBackColor = true;
+            this.confirm.Click += new System.EventHandler(this.confirm_Click);
+            // 
+            // opponentTalley
+            // 
+            this.opponentTalley.AutoSize = true;
+            this.opponentTalley.BackColor = System.Drawing.SystemColors.Control;
+            this.opponentTalley.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.opponentTalley.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.opponentTalley.Location = new System.Drawing.Point(662, 40);
+            this.opponentTalley.Name = "opponentTalley";
+            this.opponentTalley.Size = new System.Drawing.Size(41, 49);
+            this.opponentTalley.TabIndex = 8;
+            this.opponentTalley.Text = "0";
+            this.opponentTalley.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // userTalley
+            // 
+            this.userTalley.AutoSize = true;
+            this.userTalley.BackColor = System.Drawing.SystemColors.Control;
+            this.userTalley.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.userTalley.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userTalley.Location = new System.Drawing.Point(276, 40);
+            this.userTalley.Name = "userTalley";
+            this.userTalley.Size = new System.Drawing.Size(41, 49);
+            this.userTalley.TabIndex = 9;
+            this.userTalley.Text = "0";
+            this.userTalley.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // userImage
+            // 
+            this.userImage.Location = new System.Drawing.Point(216, 129);
+            this.userImage.Name = "userImage";
+            this.userImage.Size = new System.Drawing.Size(164, 178);
+            this.userImage.TabIndex = 10;
+            this.userImage.TabStop = false;
+            // 
+            // opponentImage
+            // 
+            this.opponentImage.Location = new System.Drawing.Point(598, 129);
+            this.opponentImage.Name = "opponentImage";
+            this.opponentImage.Size = new System.Drawing.Size(164, 178);
+            this.opponentImage.TabIndex = 11;
+            this.opponentImage.TabStop = false;
+            // 
+            // versusImage
+            // 
+            this.versusImage.Location = new System.Drawing.Point(443, 172);
+            this.versusImage.Name = "versusImage";
+            this.versusImage.Size = new System.Drawing.Size(92, 95);
+            this.versusImage.TabIndex = 12;
+            this.versusImage.TabStop = false;
+            // 
             // RockPaperScissors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
+            this.Controls.Add(this.versusImage);
+            this.Controls.Add(this.opponentImage);
+            this.Controls.Add(this.userImage);
+            this.Controls.Add(this.userTalley);
+            this.Controls.Add(this.opponentTalley);
+            this.Controls.Add(this.confirm);
+            this.Controls.Add(this.Result);
             this.Controls.Add(this.playResult);
             this.Controls.Add(this.userResult);
             this.Controls.Add(this.opponentResult);
@@ -109,6 +209,9 @@ namespace RockPaperScissors
             this.Controls.Add(this.Rock);
             this.Name = "RockPaperScissors";
             this.Text = "RockPaperScissors";
+            ((System.ComponentModel.ISupportInitialize)(this.userImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opponentImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.versusImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +226,13 @@ namespace RockPaperScissors
         private System.Windows.Forms.TextBox userPlay;
         private System.Windows.Forms.TextBox userResult;
         private System.Windows.Forms.Label playResult;
+        private System.Windows.Forms.TextBox Result;
+        private System.Windows.Forms.Button confirm;
+        private System.Windows.Forms.Label opponentTalley;
+        private System.Windows.Forms.Label userTalley;
+        private System.Windows.Forms.PictureBox userImage;
+        private System.Windows.Forms.PictureBox opponentImage;
+        private System.Windows.Forms.PictureBox versusImage;
     }
 }
 
